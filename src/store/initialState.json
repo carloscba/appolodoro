@@ -1,0 +1,22 @@
+{
+    "isAuthenticated" : false,
+    "locale" : "es",
+    "credential" : {
+        "accessToken" : "",
+        "providerId" : ""
+    },
+    "user" : {
+        "displayName" : "",
+        "email" : "",
+        "photoURL" : "",
+        "uid" : ""
+    },
+    "market" : {
+        "locale" : "es",
+        "code" : "wr",
+        "promotion" : "default"
+    },
+    "currentPath" : "",
+    "currentPage" : "",
+    "utm" : ""
+}
