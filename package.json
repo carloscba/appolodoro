@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "appolodoro-locale": "^1.0.3",
     "express": "^4.16.2",
     "next": "^4.2.1",
     "react": "^16.2.0",
