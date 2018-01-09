@@ -1,24 +1,43 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import Layout from '../components/Layout.js'
+import Layout from './Layout.js'
 import Style from '../templates/pages/index'
+import AppolodoroMediaRecorder from '../devComponents/mediaRecorder/'
 
 class Index extends Component {
+    
     constructor(props){
         super(props)
-        this.copy = this.props.copy['es_ES']
+
+        this.state = {
+            copy : this.props.copy['es_ES']
+        }
+    }
+    
+    showCopy = () => {
+        this.setState({
+            copy : this.props.copy['en_US']
+        })
     }
 
-    showCopy = () => {
-        this.copy = this.props.copy['en_US']
+    handleOnTakePhoto = (blob) => {
+        this.image.src = URL.createObjectURL(blob);
+    }
+
+    setRefImage = (element) => {
+        this.image = element
     }
 
     render(){
         
         return (
             <Layout>
-                <h1>{ this.copy.title }</h1>
-                <button onClick={ this.showCopy }>Show</button>
+                <h1>{ this.state.copy.title }</h1>
+                <button onClick={ this.showCopy }>En</button>
+                <div>
+                    <AppolodoroMediaRecorder onTakePhoto = { this.handleOnTakePhoto } />
+                    <img ref={ this.setRefImage } />
+                </div>
             </Layout>
         )
     }
@@ -26,10 +45,10 @@ class Index extends Component {
 
 const copy = {
     en_US : {
-        title : <h1>Title</h1>
+        title : 'Title'
     },
     es_ES:{
-        title : <h1>Titulo</h1>
+        title : 'Titulo'
     }
 }
 
