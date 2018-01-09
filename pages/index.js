@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import Layout from './Layout.js'
 import Style from '../templates/pages/index'
-import AppolodoroMediaRecorder from '../devComponents/mediaRecorder/'
+import AppolodoroMediaRecorder from 'appolodoro-mediarecorder'
 
 class Index extends Component {
     
