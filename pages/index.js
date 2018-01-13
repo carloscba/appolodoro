@@ -33,11 +33,13 @@ class Index extends Component {
         return (
             <Layout>
                 <h1>{ this.state.copy.title }</h1>
+                <p>Lorem ipsum</p>
                 <button onClick={ this.showCopy }>En</button>
                 <div>
                     <AppolodoroMediaRecorder onTakePhoto = { this.handleOnTakePhoto } />
                     <img ref={ this.setRefImage } />
                 </div>
+                <Style />
             </Layout>
         )
     }

@@ -12,12 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "appolodoro-locale": "^1.0.3",
-    "appolodoro-mediarecorder": "1.0.1",
-    "express": "^4.16.2",
-    "next": "^4.2.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "appolodoro-locale": "1.0.3",
+    "appolodoro-mediarecorder": "1.0.3",
+    "express": "4.16.2",
+    "next": "4.2.1",
+    "prop-types": "15.6.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0"
   }
 }
