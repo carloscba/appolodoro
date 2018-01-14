@@ -1,19 +1,11 @@
-import { fromJS } from 'immutable'
-const initialState = fromJS(
-    {
-        "title" : "appolodoro",
-        "locale" : "es_ES",
-        "subdomain" : "",
-        "currentPath" : "",
-        "utm" : ""
-    }    
-)
-
-function site(state = initialState, action){
+function site(state = {}, action){
     switch(action.type){
         case 'SITE_NEW_TITLE':            
-            return state.set('title', action.payload.title)
+            return state
         break
+        case 'SITE_SET_LOCALE':            
+            return state.set('locale', action.payload.locale)
+        break        
         default:
             return state
     }

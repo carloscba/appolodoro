@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types';
 import { fromJS } from 'immutable'
+import * as actions from '../redux/actions/site'
 
 class Home extends Component {
     
@@ -14,13 +16,14 @@ class Home extends Component {
         return (
             <div>
                 <h1>Appolodoro</h1>
-                <p>{ this.props.store.get('site').get('title') }</p>
+                <p>{ this.props.store.get('title') }</p>
                 <button onClick={ () => { this.props.dispatch({
                     type : "SITE_NEW_TITLE",
                     payload : {
                         title : "Nuevo Titulo"
                     }
                 })}}>New Title</button>
+                <button onClick={ () => { this.props.actions.setLocale('en_EN')}}>Change Language ({ this.props.store.get('locale') })</button>
             </div>
         )
     }
@@ -49,5 +52,11 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions : bindActionCreators(actions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
 //export default Index

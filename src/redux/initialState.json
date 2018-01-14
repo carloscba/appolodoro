@@ -1,12 +1,7 @@
 {
-    "site" : {
-        "locale" : "es_ES",
-        "subdomain" : "",
-        "currentPath" : "",
-        "utm" : ""
-    },
-    "user" : {
-        "username" : "",
-        "email" : ""
-    }
+    "title" : "appolodoro",
+    "locale" : "es_ES",
+    "subdomain" : "",
+    "currentPath" : "",
+    "utm" : ""
 }
