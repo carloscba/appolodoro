@@ -1,8 +1,12 @@
 {
     "site" : {
-        "locale" : "es_ES"
+        "locale" : "es_ES",
+        "subdomain" : "",
+        "currentPath" : "",
+        "utm" : ""
     },
     "user" : {
+        "username" : "",
         "email" : ""
     }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
+import { fromJS } from 'immutable'
 
 class Home extends Component {
     
@@ -13,6 +14,13 @@ class Home extends Component {
         return (
             <div>
                 <h1>Appolodoro</h1>
+                <p>{ this.props.store.get('site').get('title') }</p>
+                <button onClick={ () => { this.props.dispatch({
+                    type : "SITE_NEW_TITLE",
+                    payload : {
+                        title : "Nuevo Titulo"
+                    }
+                })}}>New Title</button>
             </div>
         )
     }
@@ -37,7 +45,7 @@ Home.defaultProps = {
 
 const mapStateToProps = (state, props) => {
     return {
-        store :state
+        store : fromJS(state)
     }
 }
 

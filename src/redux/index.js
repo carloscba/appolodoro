@@ -1,10 +1,9 @@
 import { createStore } from 'redux'
 import initialState from './initialState.json'
-import reducer from './reducer'
+import reducers from './reducers'
 
 const store = createStore(
-  reducer,
-  { data : initialState }
+  reducers
 )
 
 export default store
