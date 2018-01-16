@@ -4,7 +4,10 @@ function site(state = {}, action){
             return state
         break
         case 'SITE_SET_LOCALE':            
-            return state.set('locale', action.payload.locale)
+            return {
+                ...state,
+                locale : action.payload.locale
+            }
         break        
         default:
             return state

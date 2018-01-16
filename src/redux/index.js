@@ -1,5 +1,4 @@
 import { createStore } from 'redux'
-import { fromJS } from 'immutable'
 import initialState from './initialState.json'
 import reducers from './reducers'
 
@@ -7,7 +6,7 @@ const sessionState = (sessionStorage.getItem('store')) ? JSON.parse(sessionStora
 
 const store = createStore(
   reducers,
-  fromJS(sessionState),
+  sessionState,
 )
 
 store.subscribe(()=>{
