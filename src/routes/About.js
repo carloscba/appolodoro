@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
+import styles from '../templates/routes/About.css'
 
 class About extends Component {
     
@@ -9,14 +10,9 @@ class About extends Component {
     }
 
     render(){
-        console.log(this.props.store)
         return (
             <div>
-                <h1>About</h1>
-                <button onClick = { () => {this.props.dispatch({
-                    type: 'test',
-                    payload : {}
-                })} }>Test Reducer</button>
+                <h1 style={ styles.title }>About</h1>
             </div>
         )
     }

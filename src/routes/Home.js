@@ -16,38 +16,15 @@ class Home extends Component {
             <div>
                 <h1>Appolodoro</h1>
                 <p>{ this.props.store.title }</p>
-                <button onClick={ () => { this.props.dispatch({
-                    type : "SITE_NEW_TITLE",
-                    payload : {
-                        title : "Nuevo Titulo"
-                    }
-                })}}>New Title</button>
                 <button onClick={ () => { this.props.actions.setLocale('en_EN')}}>Change Language ({ this.props.store.locale })</button>
             </div>
         )
     }
 }
 
-const copy = {
-    en_US : {
-        title : 'Title'
-    },
-    es_ES:{
-        title : 'Titulo'
-    }
-}
-
-Home.propTypes = {
-    copy: PropTypes.object
-};
-
-Home.defaultProps = {
-    copy: copy
-}
-
 const mapStateToProps = (state, props) => {
     return {
-        store : fromJS(state)
+        store : state
     }
 }
 
@@ -58,4 +35,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
-//export default Index
