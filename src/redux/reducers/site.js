@@ -3,6 +3,7 @@ function site(state = {}, action){
         case 'SITE_NEW_TITLE':            
             return state
         break
+
         case 'SITE_SET_LOCALE':            
             return {
                 ...state,
