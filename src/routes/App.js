@@ -4,12 +4,16 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types';
 import * as actions from '../redux/actions/site'
+import * as firebase from 'firebase'
+import settings from '../settings/'
 
 //Routes
 import Home from './Home'
 import About from './About'
 //Components
 
+//Firebase configuration
+(settings.firebase.apiKey) && firebase.initializeApp(settings.firebase)
 
 class App extends Component {
   render() {
