@@ -15,7 +15,7 @@ import Header from '../components/App/Header/'
 import Footer from '../components/App/Footer/'
 
 //Firebase configuration
-(settings.firebase.apiKey) && firebase.initializeApp(settings.firebase)
+(settings.firebase && settings.firebase.apiKey) && firebase.initializeApp(settings.firebase)
 
 class App extends Component {
   render() {
