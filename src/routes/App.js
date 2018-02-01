@@ -9,6 +9,8 @@ import * as actions from '../redux/actions/site'
 import Home from './Home'
 import About from './About'
 //Components
+import Header from '../components/App/Header/'
+import Footer from '../components/App/Footer/'
 
 
 class App extends Component {
@@ -16,8 +18,10 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header />
           <Route exact path='/' component={ Home }/>
           <Route exact path='/about' component={ About }/>
+          <Footer/>
         </div>
       </Router>
     );
