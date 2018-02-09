@@ -13,11 +13,21 @@ import About from './About'
 //Components
 import Header from '../components/App/Header/'
 import Footer from '../components/App/Footer/'
+//Functions
+import { checkProtocol, getLocale } from '../appolodoro/'
 
 //Firebase configuration
 (settings.firebase && settings.firebase.apiKey) && firebase.initializeApp(settings.firebase)
 
 class App extends Component {
+  
+  componentWillMount = () => {
+    checkProtocol()
+    this.props.actions.setPath(getLocale().path)
+    this.props.actions.setLocale(getLocale().locale)
+    this.props.actions.setWorking(false)
+  }
+
   render() {
     return (
       <Router>

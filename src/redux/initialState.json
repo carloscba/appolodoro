@@ -1,7 +1,8 @@
 {
     "title" : "appolodoro",
-    "locale" : "es_ES",
+    "locale" : "en",
     "subdomain" : "",
     "currentPath" : "",
-    "utm" : ""
+    "utm" : "",
+    "working" : false
 }

@@ -16,7 +16,7 @@ class Home extends Component {
             <div>
                 <h1>Appolodoro</h1>
                 <p>{ this.props.store.title }</p>
-                <button onClick={ () => { this.props.actions.setLocale('en_EN')}}>Change Language ({ this.props.store.locale })</button>
+                <button onClick={ () => { this.props.actions.setLocale('es')}}>Change Language ({ this.props.store.locale })</button>
             </div>
         )
     }
