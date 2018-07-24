@@ -10,6 +10,7 @@ import settings from '../settings/'
 //Routes
 import Home from './Home'
 import About from './About'
+import Lottie from './Lottie'
 //Components
 import Header from '../components/App/Header/'
 import Footer from '../components/App/Footer/'
@@ -35,6 +36,7 @@ class App extends Component {
           <Header />
           <Route exact path='/' component={ Home }/>
           <Route exact path='/about' component={ About }/>
+          <Route exact path='/lottie' component={ Lottie }/>
           <Footer/>
         </div>
       </Router>
