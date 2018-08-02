@@ -10,7 +10,11 @@ const store = createStore(
 )
 
 store.subscribe(()=>{
-  sessionStorage.setItem('store', JSON.stringify(store.getState()));
+  try{
+    sessionStorage.setItem('store', JSON.stringify(store.getState()));
+  }catch(error){
+    console.log('error', error)
+  }
 })
 
 export default store

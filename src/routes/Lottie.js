@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types';
 import * as actions from '../redux/actions/site'
 import lottie from 'lottie-web';
-import planeAnimation from '../animations/Plane.json';
+import planeAnimation from '../animations/data-3.json';
 import '../templates/routes/Lottie.css'
 
 class Lottie extends Component {
