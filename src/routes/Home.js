@@ -3,20 +3,39 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types';
 import * as actions from '../redux/actions/site'
+import AppolodoroMediaRecorder from 'appolodoro-mediarecorder'
 
 class Home extends Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props)
     }
 
-    render(){
-        
+    handleOnError = (error) => {
+        console.log(error)
+        this.setState({
+            error: error
+        })
+    }
+
+    handleUnavailable = (error) => {
+        this.setState({
+            show: true,
+            error: error
+        })
+    }
+
+    handleTakePhoto = (imageData) => { }
+
+    render() {
+
         return (
             <div>
-                <h1>Appolodoro</h1>
-                <p>{ this.props.store.title }</p>
-                <button onClick={ () => { this.props.actions.setLocale('es')}}>Change Language ({ this.props.store.locale })</button>
+                <AppolodoroMediaRecorder
+                    onError={this.handleOnError}
+                    onTakePhoto={this.handleTakePhoto}
+                    unavailable={this.handleUnavailable}
+                />
             </div>
         )
     }
@@ -24,13 +43,13 @@ class Home extends Component {
 
 const mapStateToProps = (state, props) => {
     return {
-        store : state
+        store: state
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions : bindActionCreators(actions, dispatch)
+        actions: bindActionCreators(actions, dispatch)
     }
 }
 
